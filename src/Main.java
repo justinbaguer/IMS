@@ -1,19 +1,17 @@
 import java.util.Scanner;
 import Collection.*;
+import UserDatabase.*;
 
 public class Main {
 	
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		String person1 = "JohnSmith";
-		String password1 = "erf234";
-		String person2 = "RJReynolds";
-		String password2 = "rtw212";
-		String person3 = "PaulJohnson";
-		String password3 = "gdw321";
-		String person4 = "MikePaterson";
-		String password4 = "fqt231";
-	
+		
+		users user1 = new users("JohnSmith", "erf234");
+		users user2 = new users("RJReynolds", "rtw212");
+		users user3 = new users("PaulJohnson", "gdw321");
+		users user4 = new users("MikePaterson", "fqt231");
+		
 		
 		System.out.println("Please enter your username");
 		Scanner usernameInput = new Scanner(System.in);
@@ -22,19 +20,19 @@ public class Main {
 		Scanner passwordInput = new Scanner(System.in);
 		String passInput = passwordInput.nextLine();
 	
-		if (userInput.equals(person1)&&passInput.equals(password1)) {
+		if (userInput.equals(user1.username)&&passInput.equals(user1.password)) {
 			System.out.println("Success.");
 		}
 			
-		else if (userInput.equals(person2)&&passInput.equals(password2)) {
+		else if (userInput.equals(user2.username)&&passInput.equals(user2.password)) {
 				System.out.println("Success.");
 			}
 			
-		else if (userInput.equals(person3)&&passInput.equals(password3)) {
+		else if (userInput.equals(user3.username)&&passInput.equals(user3.password)) {
 					System.out.println("Success.");
 				}
 			
-		else if (userInput.equals(person4)&&passInput.equals(password4)) {
+		else if (userInput.equals(user4.username)&&passInput.equals(user4.password)) {
 							System.out.println("Success.");
 					}
 					else {
@@ -79,15 +77,30 @@ public class Main {
 		if (inputB.equals(LibraryA)) {
 			System.out.println("Harry Potter: 2 Copies Available\nThe Great Gatsby: 5 Copies Available\nUnsolved: 1 Copy Available\nOutliers: 4 Copies Available" );		
 			
+			System.out.println("Please enter the title of the book you are interested in");
+			Scanner bookChoice = new Scanner(System.in);
+			String inputC = bookChoice.nextLine();
+			System.out.println("You have selected " + inputC + " at " + inputB);
+			System.out.println("Thank you for using our system!");
+		
 		}else if(inputB.equals(LibraryB)) {
 			System.out.println("The Great Gatsby: 3 Copies Available\nTo kill a MockingBird: 4 Copies Available\n7 Habits of Highly Effective People: 6 Copies Available\nUnsolved: 2 Copies Available\nOutliers: 5 Copies Available");
+		
+			System.out.println("Please enter the title of the book you are interested in");
+			Scanner bookChoice = new Scanner(System.in);
+			String inputC = bookChoice.nextLine();
+			System.out.println("You have selected " + inputC + " at " + inputB);
+			System.out.println("Thank you for using our system!");	
+				
 		}
 		else {
 			System.out.println("Error.");
-			System.exit(0);
+	
 		}
 		
 	
+		
+		}
+	
 	}
 	
-}
